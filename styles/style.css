@@ -1,15 +1,14 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--background-color);
   background-image: var(--background-image);
   background-position: center;
-  background-size: cover;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -33,17 +32,10 @@
   border-style: solid;
   border-color: var(--border-color);
   border-inline-start: var(--border-inline-start);
-  border-inline-end: var(--border-inline-end);
-  border-block-start: var(--border-block-start);
   border-block-end: var(--border-block-end);
 }
 
 .decorated-zone::after {
-  --border-inline-start: 1px;
-  --border-block-end: 1px;
-  --border-block-start: 0;
-  --border-inline-end: 0;
-
   content: "";
   position: absolute;
   bottom: 10px;
@@ -52,10 +44,8 @@
   height: 25px;
   border-style: solid;
   border-color: var(--border-color);
-  border-inline-start: var(--border-inline-start);
   border-inline-end: var(--border-inline-end);
   border-block-start: var(--border-block-start);
-  border-block-end: var(--border-block-end);
 }
 
 .header__theme-menu {
@@ -67,15 +57,15 @@
 
 .header__theme-menu-item {
   --margin-block-end: 10px;
-
+  
   margin-block-end: var(--margin-block-end);
 }
 
 .header__theme-menu-button {
   --background-color: transparent;
+
   border: none;
   color: var(--font-color);
-
   text-align: center;
   text-transform: lowercase;
   background-color: var(--background-color);
@@ -100,19 +90,7 @@
 .header__theme-menu-button_active {
   border: 1px solid currentColor;
   pointer-events: none;
-  /*outline: 1px solid rgba(255, 0, 112, 1);*/
 }
-
-/* .decorative-text__decorative-element::before {
-  --line-height: 25px;
-
-  content: "REC";
-  position: absolute;
-  top: 10px;
-  right: 38px;
-  line-height: var(--line-height);
-  color: var(--font-color);
-} */
 
 .header__rec {
   --line-height: 25px;
@@ -141,29 +119,14 @@
   block-size: 9px;
 }
 
-/* .decorative-text__decorative-element::after {
-  --background-color: #ff0070;
-
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 18px;
-  right: 19px;
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
-  background-color: var(--background-color);
-  inline-size: 9px;
-  block-size: 9px;
-  border-radius: 50%;
-} */
-
 .title {
   --font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --font-weight: 700;
   --line-height: 95.7px;
   --font-color: #db00ff;
+
   color: var(--font-color);
   font-weight: var(--font-weight);
-
   font-size: var(--font-size);
   line-height: var(--line-height);
   text-shadow: 4px 4px var(--accent-color);
@@ -174,12 +137,12 @@
   --line-height: 23.4px;
   --background-color: #ff0070;
   --font-color: #000028;
+
   color: var(--font-color);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
   background-color: var(--background-color);
-
   inline-size: 100%;
 }
 
@@ -211,12 +174,11 @@
 
 .section__heading {
   --font-weight: 700;
-  --line-height: 23.4px;
   --margin-block-end: 20px;
   --font-color: #ff0070;
+
   margin-block-end: var(--margin-block-end);
   color: var(--font-color);
-
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
@@ -224,16 +186,16 @@
 
 .another-block-size {
   --margin-block-end: 20px;
-  margin-block-end: var(--margin-block-end);
 
+  margin-block-end: var(--margin-block-end);
   block-size: min-content;
 }
 
 .list__text {
   --font-color: #f1b2ce;
   --margin-block-start: 10px;
-  margin-block-start: var(--margin-block-start);
 
+  margin-block-start: var(--margin-block-start);
   color: var(--font-color);
 }
 
@@ -285,7 +247,6 @@
 .images__container {
   --gap: 10px;
 
-  /* display: -webkit-grid; */
   display: grid;
   gap: var(--gap);
   object-fit: cover;
@@ -334,16 +295,16 @@
 
 .other-shade {
   --margin-inline-start: 5px;
-  margin-inline-start: var(--margin-inline-start);
 
+  margin-inline-start: var(--margin-inline-start);
   text-shadow: 2px 2px var(--accent-color);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .header {
     --padding: 20px;
-    justify-self: center;
 
+    justify-self: center;
     block-size: max(100vh, 1024px);
   }
 
@@ -381,8 +342,8 @@
     --font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --line-height: 99px;
     --margin-inline-start: -20px;
-    margin-inline-start: var(--margin-inline-start);
 
+    margin-inline-start: var(--margin-inline-start);
     font-size: var(--font-size);
     line-height: var(--line-height);
   }
@@ -431,8 +392,8 @@
 
   .section__heading {
     --margin-block-end: 0;
-    margin-block-end: var(--margin-block-end);
 
+    margin-block-end: var(--margin-block-end);
     inline-size: 236px;
   }
 
@@ -481,8 +442,8 @@
 
   .footer {
     --padding: 20px;
-    position: relative;
 
+    position: relative;
     display: grid;
     block-size: max(100vh, 1024px);
   }
@@ -492,7 +453,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .header {
     inline-size: 100%;
     block-size: max(100vh, 768px);
@@ -516,7 +477,6 @@
 
   .more__background-size {
     align-self: center;
-    /* inline-size: max(50%, 491px); */
   }
 
   .subtitle-question {
@@ -552,10 +512,9 @@
 
   .section__heading {
     --font-weight: 700;
-    --line-height: 23.4px;
     --font-color: #ff0070;
-    color: var(--font-color);
 
+    color: var(--font-color);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
     line-height: var(--line-height);

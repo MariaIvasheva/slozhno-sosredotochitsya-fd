@@ -19,9 +19,9 @@
   --margin-inline-end: 2px;
   --margin-block-start: 65px;
   --margin-block-end: 55px;
-  --border-block-start: 1px;
+  --border-block-start: 0;
   --border-block-end: 0;
   --border-inline-start: 0;
-  --border-inline-end: 1px;
+  --border-inline-end: 0;
   --gap: 10px;
 }
