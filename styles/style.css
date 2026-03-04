@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
@@ -57,7 +57,7 @@
 
 .header__theme-menu-item {
   --margin-block-end: 10px;
-  
+
   margin-block-end: var(--margin-block-end);
 }
 
@@ -69,6 +69,7 @@
   text-align: center;
   text-transform: lowercase;
   background-color: var(--background-color);
+  transition: var(--border-color) 0.3s ease;
   inline-size: 70px;
   block-size: 26px;
 }
@@ -208,6 +209,7 @@
 .link-line {
   border-bottom: 1px solid #f1b2ce;
   text-decoration: none;
+  transition: var(--border-bottom-color) 0.3s ease;
 }
 
 .remove__link-line {
@@ -394,7 +396,7 @@
     --margin-block-end: 0;
 
     margin-block-end: var(--margin-block-end);
-    inline-size: 236px;
+    max-inline-size: 236px;
   }
 
   .link-line {
@@ -518,7 +520,7 @@
     font-weight: var(--font-weight);
     font-size: var(--font-size);
     line-height: var(--line-height);
-    inline-size: 314.96px;
+    max-inline-size: 314.96px;
   }
 
   .list__text {
